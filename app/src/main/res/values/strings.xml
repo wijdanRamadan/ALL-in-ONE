@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="tab_text_1">News</string>
+    <string name="tab_text_2">Weather</string>
+    <string name="tab_text_3">Currency</string>
+</resources>
