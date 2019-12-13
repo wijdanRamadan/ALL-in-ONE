@@ -2,7 +2,7 @@ package com.example.myapplication.currency.model;
 
 import com.google.gson.annotations.SerializedName;
 
-public class CurrencyResponse{
+public class CurrencyResponse {
     @SerializedName("success")
     private boolean success;
     @SerializedName("terms")

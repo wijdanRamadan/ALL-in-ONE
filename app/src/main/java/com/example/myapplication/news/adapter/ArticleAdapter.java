@@ -18,35 +18,43 @@ import java.util.List;
 public class ArticleAdapter extends RecyclerView.Adapter<ArticleAdapter.ViewHolder> {
     private List<ArticleModel> articleArrayList;
     private Context context;
+
     public ArticleAdapter(List<ArticleModel> articleArrayList) {
         this.articleArrayList = articleArrayList;
     }
+
     @Override
     public ArticleAdapter.ViewHolder onCreateViewHolder(ViewGroup viewGroup, int i) {
         View view = LayoutInflater.from(viewGroup.getContext()).inflate(R.layout.news_item, viewGroup, false);
         return new ArticleAdapter.ViewHolder(view);
     }
+
     @Override
     public void onBindViewHolder(ArticleAdapter.ViewHolder viewHolder, int position) {
         final ArticleModel articleModel = articleArrayList.get(position);
-        if(!TextUtils.isEmpty(articleModel.getTitle())) {
+
+        if (!TextUtils.isEmpty(articleModel.getTitle())) {
             viewHolder.titleText.setText(articleModel.getTitle());
         }
-        if(!TextUtils.isEmpty(articleModel.getDescription())) {
+        if (!TextUtils.isEmpty(articleModel.getDescription())) {
             viewHolder.descriptionText.setText(articleModel.getDescription());
         }
         viewHolder.artilceAdapterParentLinear.setTag(articleModel);
     }
+
     @Override
     public int getItemCount() {
         return articleArrayList.size();
     }
-    class ViewHolder extends RecyclerView.ViewHolder{
+
+    class ViewHolder extends RecyclerView.ViewHolder {
         private TextView titleText;
         private TextView descriptionText;
         private LinearLayout artilceAdapterParentLinear;
+
         ViewHolder(View view) {
             super(view);
+
             titleText = view.findViewById(R.id.article_title);
             descriptionText = view.findViewById(R.id.article_description);
             artilceAdapterParentLinear = view.findViewById(R.id.article_adapter);
